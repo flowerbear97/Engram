@@ -1,6 +1,26 @@
-## Neuragram
+<p align="center">
+  <a href="https://github.com/flowerbear97/neuragram">
+    <img src="assets/banner.svg" alt="Neuragram" width="800">
+  </a>
+</p>
 
-**English** | [中文](README_CN.md)
+<p align="center">
+  <strong>Agent memory that just works. No Docker, no vector DB, no API keys.</strong>
+</p>
+
+<p align="center">
+  <a href="https://pypi.org/project/neuragram/"><img src="https://img.shields.io/pypi/v/neuragram?color=6366f1&style=flat-square" alt="PyPI"></a>
+  <a href="https://pypi.org/project/neuragram/"><img src="https://img.shields.io/pypi/pyversions/neuragram?color=06b6d4&style=flat-square" alt="Python"></a>
+  <a href="https://github.com/flowerbear97/neuragram/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/flowerbear97/neuragram/test.yml?label=tests&style=flat-square" alt="Tests"></a>
+  <a href="https://pypi.org/project/neuragram/"><img src="https://img.shields.io/pypi/dm/neuragram?color=38bdf8&style=flat-square" alt="Downloads"></a>
+  <a href="https://github.com/flowerbear97/neuragram/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flowerbear97/neuragram?color=94a3b8&style=flat-square" alt="License"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/flowerbear97/neuragram">English</a> | <a href="README_CN.md">中文</a> | <a href="https://flowerbear97.github.io/neuragram/">Docs</a>
+</p>
+
+---
 
 Lightweight, framework-agnostic memory layer for AI agents. Built on SQLite + sqlite-vec + FTS5 — no external services required.
 
@@ -18,15 +38,22 @@ print(results[0].memory.content)
 mem.close()
 ```
 
-## Comparison
+## Why Neuragram?
+
+Every other agent memory solution requires you to set up external services — vector databases, graph databases, Docker containers, or mandatory LLM API keys. **Neuragram is different.**
+
+- **Zero external deps** — everything runs inside your process, backed by SQLite
+- **LLM optional** — rule-based fallback for all intelligent features; add an LLM when you want, not because you must
+- **`pip install` and go** — from zero to first memory in under 30 seconds
+- **Framework agnostic** — works with LangChain, LlamaIndex, Claude Code, or plain Python
 
 | | Neuragram | Mem0 | Letta | Graphiti |
 |---|---|---|---|---|
 | Install | `pip install neuragram` | `pip install` | Docker + Server | pip + Neo4j |
-| External Deps | None | Vector DB + LLM | PG + Server + LLM | Graph DB + LLM |
-| Framework Lock-in | None | None | Letta runtime | None |
-| Memory Lifecycle | Built-in | None | Agent self-managed | Partial |
-| LLM Required | No | Yes | Yes | Yes |
+| External Deps | **None** | Vector DB + LLM | PG + Server + LLM | Graph DB + LLM |
+| Framework Lock-in | **None** | None | Letta runtime | None |
+| Memory Lifecycle | **Built-in** | None | Agent self-managed | Partial |
+| LLM Required | **No** | Yes | Yes | Yes |
 
 ## Features
 
@@ -199,6 +226,10 @@ AgentMemory (client.py)
 └── Integrations         MCP Server, REST API, LangChain, LlamaIndex
 ```
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
 ## License
 
-Apache-2.0
+[Apache-2.0](LICENSE)

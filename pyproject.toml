@@ -62,7 +62,8 @@ neuragram-api = "neuragram.server.api:main"
 [project.urls]
 Homepage = "https://github.com/flowerbear97/neuragram"
 Repository = "https://github.com/flowerbear97/neuragram"
-Documentation = "https://github.com/flowerbear97/neuragram#readme"
+Documentation = "https://flowerbear97.github.io/neuragram/"
+Changelog = "https://github.com/flowerbear97/neuragram/blob/main/CHANGELOG.md"
 Issues = "https://github.com/flowerbear97/neuragram/issues"
 
 [tool.hatch.build.targets.wheel]

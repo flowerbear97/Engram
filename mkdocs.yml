@@ -1,0 +1,72 @@
+site_name: Neuragram
+site_url: https://flowerbear97.github.io/neuragram/
+site_description: Lightweight, framework-agnostic memory layer for AI agents
+repo_url: https://github.com/flowerbear97/neuragram
+repo_name: flowerbear97/neuragram
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/flowerbear97/neuragram
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/neuragram/
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Guide:
+    - Hybrid Search & Retrieval: guide/retrieval.md
+    - Memory Intelligence: guide/intelligence.md
+    - Lifecycle Management: guide/lifecycle.md
+    - Access Control: guide/access-control.md
+  - Integrations:
+    - Claude Code: integrations/claude-code.md
+    - MCP Server: integrations/mcp.md
+    - REST API: integrations/rest-api.md
+    - LangChain: integrations/langchain.md
+    - LlamaIndex: integrations/llamaindex.md
+  - API Reference: api/reference.md
+  - Changelog: changelog.md

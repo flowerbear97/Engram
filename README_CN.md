@@ -1,6 +1,26 @@
-## Neuragram
+<p align="center">
+  <a href="https://github.com/flowerbear97/neuragram">
+    <img src="assets/banner.svg" alt="Neuragram" width="800">
+  </a>
+</p>
 
-[English](README.md) | **中文**
+<p align="center">
+  <strong>开箱即用的 Agent 记忆层。无需 Docker、向量数据库或 API 密钥。</strong>
+</p>
+
+<p align="center">
+  <a href="https://pypi.org/project/neuragram/"><img src="https://img.shields.io/pypi/v/neuragram?color=6366f1&style=flat-square" alt="PyPI"></a>
+  <a href="https://pypi.org/project/neuragram/"><img src="https://img.shields.io/pypi/pyversions/neuragram?color=06b6d4&style=flat-square" alt="Python"></a>
+  <a href="https://github.com/flowerbear97/neuragram/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/flowerbear97/neuragram/test.yml?label=tests&style=flat-square" alt="Tests"></a>
+  <a href="https://pypi.org/project/neuragram/"><img src="https://img.shields.io/pypi/dm/neuragram?color=38bdf8&style=flat-square" alt="Downloads"></a>
+  <a href="https://github.com/flowerbear97/neuragram/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flowerbear97/neuragram?color=94a3b8&style=flat-square" alt="License"></a>
+</p>
+
+<p align="center">
+  <a href="README.md">English</a> | <a href="README_CN.md">中文</a> | <a href="https://flowerbear97.github.io/neuragram/">文档</a>
+</p>
+
+---
 
 轻量级、框架无关的 AI Agent 记忆层。基于 SQLite + sqlite-vec + FTS5 构建，无需外部服务。
 
@@ -18,15 +38,22 @@ print(results[0].memory.content)
 mem.close()
 ```
 
-## 对比
+## 为什么选择 Neuragram？
+
+所有其他 Agent 记忆方案都要求你搭建外部服务 —— 向量数据库、图数据库、Docker 容器，或者强制要求 LLM API 密钥。**Neuragram 不一样。**
+
+- **零外部依赖** — 一切都在你的进程内运行，SQLite 驱动
+- **LLM 可选** — 所有智能功能都有基于规则的降级方案；想用 LLM 时再加，而不是必须
+- **`pip install` 即用** — 从零到第一条记忆不超过 30 秒
+- **框架无关** — 支持 LangChain、LlamaIndex、Claude Code，或直接用 Python
 
 | | Neuragram | Mem0 | Letta | Graphiti |
 |---|---|---|---|---|
 | 安装方式 | `pip install neuragram` | `pip install` | Docker + Server | pip + Neo4j |
-| 外部依赖 | 无 | 向量数据库 + LLM | PG + Server + LLM | 图数据库 + LLM |
-| 框架锁定 | 无 | 无 | Letta 运行时 | 无 |
-| 记忆生命周期 | 内置 | 无 | Agent 自管理 | 部分 |
-| 需要 LLM | 否 | 是 | 是 | 是 |
+| 外部依赖 | **无** | 向量数据库 + LLM | PG + Server + LLM | 图数据库 + LLM |
+| 框架锁定 | **无** | 无 | Letta 运行时 | 无 |
+| 记忆生命周期 | **内置** | 无 | Agent 自管理 | 部分 |
+| 需要 LLM | **否** | 是 | 是 | 是 |
 
 ## 功能特性
 
@@ -199,6 +226,10 @@ AgentMemory (client.py)
 └── 集成                MCP Server, REST API, LangChain, LlamaIndex
 ```
 
+## 贡献
+
+请参阅 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ## 许可证
 
-Apache-2.0
+[Apache-2.0](LICENSE)
